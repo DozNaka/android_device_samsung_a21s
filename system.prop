@@ -1,6 +1,6 @@
-ro.product.board=exynos990
-ro.board.platform=universal990
-sys.usb.controller=10e00000.usb
-ro.boot.usbcontroller=10e00000.usb
+ro.product.board=exynos850
+ro.board.platform=universal3830
+sys.usb.controller=13600000.dwc3
+ro.boot.usbcontroller=13600000.dwc3
 ro.boot.dynamic_partitions=true
-ro.boot.boot_devices=13100000.ufs
+ro.boot.boot_devices=12100000.dwmmc0

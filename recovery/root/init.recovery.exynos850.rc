@@ -1,0 +1,29 @@
+on late-init
+    setprop ro.debuggable 1
+    setprop service.adb.root 1
+    setprop sys.usb.configfs 1
+    setprop sys.usb.config adb
+
+on init
+    write /proc/sys/kernel/hung_task_timeout_secs 0
+
+    # unlink /efs > /mnt/vendor/efs
+    rm /efs
+    mkdir /efs
+    mkdir /sec_efs
+
+on boot
+    setprop ro.boot.vbmeta.avb_version 1.1
+    setprop ro.boot.avb_version 1.1
+
+on fs
+    wait /dev/block/platform/${ro.boot.boot_devices}
+    symlink /dev/block/platform/${ro.boot.boot_devices} /dev/block/bootdevice
+    symlink /dev/block/platform/${ro.boot.boot_devices}/by-name /dev/block/by-name
+
+    symlink /dev/block/platform/${ro.boot.boot_devices}/by-name/param /dev/block/param
+    chown root system /dev/block/param
+    chmod 0666 /dev/block/param
+
+    export ANDROID_ROOT /system_root
+

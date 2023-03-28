@@ -1,4 +1,7 @@
 env:
+    # OrangeFox Sync Repository
+    FOX_SYNC: https://gitlab.com/OrangeFox/sync.git
+
     # Config
     CONFIG: config.sh
 
@@ -10,22 +13,23 @@ env:
     CIRRUS_SHELL: bash
 
 task:
-  name: "TWRP CI"
+  name: "Recovery Build"
   timeout_in: 120m
   container:
-      image: ghcr.io/sushrut1101/docker:latest
+      image: ghcr.io/sushrut1101/docker:arch
       cpu: 8
       memory: 20G
-      
+
   Checks_script:
-      - curl -sL https://raw.githubusercontent.com/DozNaka/android_device_samsung_a21s/TWRP/scripts/checks.sh | bash
+      - bash -c "$(curl -sL https://raw.githubusercontent.com/DozNaka/android_device_samsung_a21s/OF/scripts/checks.sh)"
 
   Sync_script:
-      - curl -sL https://raw.githubusercontent.com/DozNaka/android_device_samsung_a21s/TWRP/scripts/sync.sh | bash
+      - bash -c "$(curl -sL https://raw.githubusercontent.com/DozNaka/android_device_samsung_a21s/OF/scripts/sync.sh)"
 
   Build_script:
-      - curl -sL https://raw.githubusercontent.com/DozNaka/android_device_samsung_a21s/TWRP/scripts/build.sh | bash
+      - bash -c "$(curl -sL https://raw.githubusercontent.com/DozNaka/android_device_samsung_a21s/OF/scripts/build.sh)"
 
   Upload_script:
       - export TIMEOUT=43200 # Link timeout (in minutes)
-      - curl -sL https://raw.githubusercontent.com/DozNaka/android_device_samsung_a21s/TWRP/scripts/upload.sh | bash
+      - bash -c "$(curl -sL https://raw.githubusercontent.com/DozNaka/android_device_samsung_a21s/OF/scripts/upload.sh)"
+

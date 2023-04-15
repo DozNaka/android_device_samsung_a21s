@@ -18,7 +18,7 @@
 /misc           emmc    /dev/block/bootdevice/by-name/misc           flags=display="Misc"
 /prism          ext4    /dev/block/bootdevice/by-name/prism          flags=backup=0;wipeingui;display="Prism"
 /optics         ext4    /dev/block/bootdevice/by-name/optics         flags=backup=0;wipeingui;display="Optics"
-/omr		    ext4	/dev/block/bootdevice/by-name/omr		     flags=backup=0;wipeingui;display="OMR"
+/omr            ext4    /dev/block/bootdevice/by-name/omr            flags=backup=0;wipeingui;display="OMR"
 /efs            ext4    /dev/block/bootdevice/by-name/efs            flags=backup=1;display="EFS"
 /sec_efs        ext4    /dev/block/bootdevice/by-name/sec_efs        flags=backup=1;display="Sec EFS"
 /cache          ext4    /dev/block/bootdevice/by-name/cache          flags=display="Cache"

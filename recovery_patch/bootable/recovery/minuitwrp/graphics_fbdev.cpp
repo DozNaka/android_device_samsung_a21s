@@ -231,6 +231,7 @@ static GRSurface* fbdev_init(minui_backend* backend) {
             gr_framebuffer[0].format = GGL_PIXEL_FORMAT_RGB_565;
         }
     }
+#endif
 
     // Drawing directly to the framebuffer takes about 5 times longer.
     // Instead, we will allocate some memory and draw to that, then

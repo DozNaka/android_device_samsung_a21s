@@ -21,6 +21,9 @@ else
     ccache -M ${CCACHE_SIZE}
 fi
 
+# Copy recovery_patch contents to recovery source
+cp -r $DT_PATH/recovery_patch/* $SYNC_PATH/ -v
+
 # Send the Telegram Message
 
 echo -e \

@@ -54,23 +54,31 @@ BOARD_SAMSUNG_DYNAMIC_PARTITIONS_SIZE := 5536481280
 BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PARTITION_LIST := system vendor product odm
 
 # TWRP specific build flags
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file
 TARGET_USES_64_BIT_BINDER := true
 RECOVERY_SDCARD_ON_DATA := true
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file
 TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
 TW_EXTRA_LANGUAGES := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_EXCLUDE_APEX := true
+TW_INCLUDE_RESETPROP := true
 TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
 TW_DEVICE_VERSION := SM-A217X-KAWA
+
+# Haptics
 TW_USE_SAMSUNG_HAPTICS := true
+
+# Logging & Debugging
+TWRP_INCLUDE_LOGCAT := true
+TARGET_USES_LOGD := true
 
 # Brightness & Display
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
 TW_MAX_BRIGHTNESS := 306
 TW_DEFAULT_BRIGHTNESS := 128
 TW_THEME := portrait_hdpi
+TARGET_RECOVERY_FORCE_PIXEL_FORMAT := "RGBA_8888"
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab

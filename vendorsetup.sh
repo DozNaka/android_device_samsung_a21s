@@ -35,10 +35,18 @@ if [ -z "$1" -a -z "$FOX_BUILD_DEVICE" ]; then
 fi
 
 if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
+		
 		export ALLOW_MISSING_DEPENDENCIES=true
+		export LC_ALL="C.UTF-8"
+		
+		export OF_MAINTAINER="DozNaka"
+		export FOX_BUILD_TYPE="Stable-Kawa"
+		export FOX_VERSION="R12.1"
+
+
 		export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
-		export LC_ALL="C"
-		export OF_VANILLA_BUILD=1
+		export OF_DISABLE_MIUI_SPECIFIC_FEATURES=1
+		export FOX_VANILLA_BUILD=1
 		export OF_NO_SAMSUNG_SPECIAL=0
 		export FOX_DYNAMIC_SAMSUNG_FIX=1
 		#export FOX_REMOVE_AAPT=1
@@ -57,7 +65,6 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 		export OF_FL_PATH1="/tmp/flashlight"
 		export OF_FL_PATH2=""
 		export OF_FLASHLIGHT_ENABLE=1
-		export FOX_VERSION="R12.1"
 		export OF_SCREEN_H="2400"
 		export OF_HIDE_NOTCH=1
 		export OF_CLOCK_POS=1
@@ -76,7 +83,6 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 
 		#R12
 		export FOX_R12=1
-		export FOX_BUILD_TYPE=Unstable
 
 		# maximum permissible splash image size (in kilobytes); do *NOT* increase!
 		export OF_SPLASH_MAX_SIZE=104

@@ -11,9 +11,10 @@ Decryption does not work on this device and if your device is encrypted then TWR
 
 ## Features
 - DTB: Imported KawaKernel A12 DTB
-- DTBO: Imported A217MUBUADVL2 stock recovery DTBO
-- Implemented Multidisabler command
-- Recovery Kernel: Slim KawaKernel A12
+- DTBO: Imported KawaKernel A12 DTBO
+- Implemented multidisabler command
+- Implemented sgdisk command
+- Recovery Kernel: KawaKernel-R
 
 
 ## Building
@@ -56,7 +57,7 @@ Output will be in tw/out/target/product/a21s/recovery.img
 
 **If you do not do this then you will get KG STATE blocked and you will have to flash stock firmware anyway to fix it. So sorry linux users but you will need to use Odin (Not JOdin or heimdall) to reflash stock rom**
 
-### Requirements: Rooted by flashing AP file via Odin that was patched using Magisk App
+### Requirements: Rooted by flashing AP file via Odin that was patched using Magisk App OR patched vbmeta
 
 **To root your device with the patch AP method you do the following:**
 - Install [Bifrost](https://github.com/zacharee/SamloaderKotlin/releases/latest) apk

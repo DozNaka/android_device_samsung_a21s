@@ -99,7 +99,7 @@ dd if=/sdcard/recovery.img of=/dev/block/by-name/recovery
 - Place the tar file in AP in Odin then flash
 
 
-### Booting to TWRP
+### Booting to TWRP 
 - Once TWRP is flashed, boot to it with volume up + power combo
 - Go to Advanced -> Terminal, then you will enter the `multidisabler` command
 - Reboot to recovery again

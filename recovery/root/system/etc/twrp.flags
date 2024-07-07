@@ -23,7 +23,3 @@
 /sec_efs        ext4    /dev/block/bootdevice/by-name/sec_efs        flags=backup=1;display="Sec EFS"
 /cache          ext4    /dev/block/bootdevice/by-name/cache          flags=display="Cache"
 /metadata       ext4    /dev/block/bootdevice/by-name/metadata       flags=backup=1;display="Metadata"
-
-# Removable partitions
-/external_sd    vfat    /dev/block/mmcblk1p1 /dev/block/mmcblk1      flags=display="Micro SDcard";storage;wipeingui;removable
-/usb-otg        auto    /dev/block/sda1      /dev/block/sda          flags=display="USB-OTG";storage;wipeingui;removable
